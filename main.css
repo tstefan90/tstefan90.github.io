@@ -1,0 +1,107 @@
+/* Project variables */
+:root { 
+    --main-color: #ffffff;
+    --accent-color: #1c1c1c;
+
+    --default-margin: 2%;
+    --default-padding: 2%;
+    --default-gap: 3.0rem;
+
+    --default-font-size: 1.2rem;
+
+    --line-height: 2.3rem;
+    --word-spacing:0.1rem;
+}
+/* General site styling */
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: var(--default-font-size);
+
+    line-height: var(--line-height);
+    word-spacing: var(--word-spacing);
+    
+}
+
+/* Main content styling */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* row container */
+.row {
+    display: flex;
+    width: 80vw;
+
+    margin: var(--default-margin);
+    align-items: stretch; 
+    
+    gap: var(--default-gap);
+}
+/* single column, centered, used for text */
+.column {
+    flex: 1;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+/* the left column of a two column setup, used for images */
+.column_left {
+    flex: 1;
+    max-height: 50vh;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* column_left image styling, used for images with the <a> tag */
+.column_left a {
+    flex: 1;
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+/* column_left image styling */
+.column_left_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    box-sizing: border-box;
+    border: 0.5rem solid var(--accent-color);
+}
+
+
+/* the right column of two column setup, used for text  */
+.column_right {
+    flex: 1;
+    max-height: 50vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+/* Mobile interactivity */
+@media (max-width: 650px) {
+    /* change the orientation of the row so it displays verticlaly instead of horizontally */
+    .row {
+        flex-direction: column;
+        width: 80vw;
+        max-height: none;
+    }
+    /* max height no longer matters, let text length affect the height of the columns */
+    .column_left,
+    .column_right {
+        width: 100%;              
+        display:flex;
+        flex-direction: column;       
+        max-height: none;
+    }
+}

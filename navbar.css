@@ -1,0 +1,101 @@
+* navigation bar styling */
+.navbar {
+    width: 100%;
+    background-color:var(--accent-color);
+    display: flex;   
+    color: var(--main-color);
+
+    justify-content: space-between;
+
+    /* used to fit padding within the webpage, otherwise padding makes navbar extend outside of page */
+    box-sizing: border-box;
+    padding: var(--default-padding);
+    
+    align-items: center;
+    
+    text-decoration: none;
+}
+
+/* the left side of the navigation bar */
+.navbar_left {
+    display: flex;   
+}
+
+.navbar_right {
+    display: flex;   
+    text-align: right;
+    align-items: center;
+    
+    gap: var(--default-gap);
+    justify-content: flex-end;
+    text-decoration: none;
+
+}
+
+
+.navbar a,
+.navbar a:link,
+.navbar a:visited {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.navbar_right a:hover {
+    opacity: 0.5; 
+}
+
+.navbar_right img {
+  display: block;
+  height: 80px;
+  width: auto;
+}
+
+.menu_icon {
+    display: none;
+}
+
+.mobile_navbar {
+    display: none;             
+}
+
+@media (max-width: 650px) {
+    .navbar_right {
+        display: none;
+    }
+    .menu_icon {
+        display: flex;
+        height: 80px;
+        width: auto;
+    }
+
+    .menu_icon:hover {
+        opacity: .5;
+    }
+
+    .mobile_navbar 
+    {
+        display: none;             
+        flex-direction: column;   
+        background-color: var(--accent-color);
+
+        width: 100vw;
+        padding: var(--default-padding); 
+
+        position: absolute;
+        top: 28vh;
+        gap: var(--default-gap);
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+
+    .mobile_navbar a:hover{
+        opacity: 0.5;
+    }
+
+    .mobile_navbar.show {   
+        display: flex;      
+    }
+    
+}
