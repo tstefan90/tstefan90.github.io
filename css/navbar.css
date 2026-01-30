@@ -1,9 +1,11 @@
-* navigation bar styling */
+/* navigation bar styling */
 .navbar {
     width: 100%;
-    background-color:var(--accent-color);
-    display: flex;   
-    color: var(--main-color);
+    padding: 1rem 2rem;
+    display: flex;
+    min-height: 60px;
+    align-items: center;
+    background-color: var(--accent-color);
 
     justify-content: space-between;
 
@@ -11,7 +13,6 @@
     box-sizing: border-box;
     padding: var(--default-padding);
     
-    align-items: center;
     
     text-decoration: none;
 }
